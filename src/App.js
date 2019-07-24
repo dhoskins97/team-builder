@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import Forms from './Forms.js';
+import Card from './Card.js';
+
+import './App.scss';
+
 
 function App() {
+
+  const [entries, setEntries] = useState([]);
+
+
+  // const [person, setPerson] = useState({name: "", email: ""})
+
+  // const changePerson = event => {
+  //   setPerson({...person, [event.target.name]: event.target.value})
+  // };
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Forms />
+      {entries.map(entry => {
+        return (<Card name={entry.name} email={entry.email} role={entry.role} />)
+      })}
     </div>
   );
 }
