@@ -10,21 +10,14 @@ function App() {
 
   const [entries, setEntries] = useState([]);
 
-
-  // const [person, setPerson] = useState({name: "", email: ""})
-
-  // const changePerson = event => {
-  //   setPerson({...person, [event.target.name]: event.target.value})
-  // };
-
-
-
   return (
     <div className="App">
-      <Forms />
-      {entries.map(entry => {
-        return (<Card name={entry.name} email={entry.email} role={entry.role} />)
-      })}
+      <Forms setEntries={setEntries}/>
+      <div className="cardsBox"> 
+        {entries.map(entry => {
+          return (<Card name={entry.name} email={entry.email} role={entry.role} />)
+        })}
+      </div>
     </div>
   );
 }

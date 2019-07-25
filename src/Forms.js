@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import { entries } from './App.js';
-
 const Forms = props => {
     
     const [entry, setEntry] = useState({name: "", email: "", role: ""});
